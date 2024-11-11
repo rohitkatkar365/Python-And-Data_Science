@@ -1,0 +1,52 @@
+What is a Data Science?
+Data science or data analytics is a process of analyzing large set of data points to get answers on questions related to that dataset.
+
+What is Pandas?
+Pandas is a python module that makes data science easy and effective.
+
+What is dataframe?
+Dataframe nothing but collection of rows and columns.
+
+What is data munging or data wrangling?
+Process of cleaning messay data is called data munging or data wrangling.
+
+
+
+Pandas is a powerful open-source Python library used for data manipulation and analysis. It is built on top of NumPy, and it provides data structures like **DataFrame** and **Series** to efficiently handle and analyze large datasets. Pandas is widely used in data science, data analytics, and machine learning tasks.
+
+### Key Features:
+1. **DataFrame**: A 2D labeled data structure, similar to a table or spreadsheet, where data is arranged in rows and columns.
+2. **Series**: A 1D labeled array, which can hold any data type.
+3. **Data Handling**: Pandas allows easy handling of missing data, filtering, and cleaning of datasets.
+4. **Data Manipulation**: You can merge, group, join, and pivot data effortlessly.
+5. **File I/O**: Pandas can read and write data from various file formats like CSV, Excel, SQL databases, JSON, etc.
+
+#### Common Operations in Pandas:
+- **Reading a CSV file**: 
+  ```python
+  import pandas as pd
+  df = pd.read_csv('file.csv')
+  ```
+  
+- **Viewing Data**:
+  ```python
+  df.head()  # Displays the first few rows
+  df.info()  # Shows information about the DataFrame
+  ```
+
+- **Selecting Columns**:
+  ```python
+  df['column_name']  # Access a specific column
+  df[['col1', 'col2']]  # Access multiple columns
+  ```
+
+- **Filtering Data**:
+  ```python
+  df[df['column'] > value]  # Filter rows based on conditions
+  ```
+
+- **Aggregations**:
+  ```python
+  df.groupby('column').sum()  # Group by a column and sum values
+  ```
+
