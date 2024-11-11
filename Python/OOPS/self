@@ -1,0 +1,5 @@
+self is a reference to the current instance of the class.
+It is used to access instance variables and methods.
+It distinguishes instance attributes from local variables.
+self must be the first parameter in instance methods of a class, although it is not passed explicitly when calling the method.
+

@@ -1,0 +1,377 @@
+Numpy is a extremely,ly popular module. 
+it is heavily used in scientific computing.
+numpy most useful feature is n dimensionally array object.
+
+3 main benefits of numpy array over
+    1] Less memory
+    2] Fast
+    3] Convient
+
+### 1. **Installation**
+   To install NumPy, you can use pip:
+   ```bash
+   pip install numpy
+   ```
+
+### 2. **Core Data Structure: `ndarray`**
+   - **`ndarray` (N-dimensional array)** is the primary object in NumPy.
+   - It is a grid of values of the same type, indexed by a tuple of non-negative integers.
+   - It has attributes like:
+     - `shape`: The dimensions of the array (e.g., a 3x2 array has shape `(3, 2)`).
+     - `dtype`: The data type of the array’s elements (e.g., `int32`, `float64`).
+     - `size`: Total number of elements in the array.
+     - `ndim`: Number of dimensions (axes).
+
+   Example:
+   ```python
+   import numpy as np
+   arr = np.array([[1, 2, 3], [4, 5, 6]])
+   print(arr.shape)  # Output: (2, 3)
+   print(arr.dtype)  # Output: int64 (default on most platforms)
+   ```
+
+### 3. **Array Creation**
+   NumPy provides several ways to create arrays:
+   - **From Python lists**:
+     ```python
+     np.array([1, 2, 3])
+     ```
+   - **Zeros array**:
+     ```python
+     np.zeros((3, 3))  # Creates a 3x3 array of zeros
+     ```
+   - **Ones array**:
+     ```python
+     np.ones((2, 2))  # Creates a 2x2 array of ones
+     ```
+   - **Identity matrix**:
+     ```python
+     np.eye(3)  # Creates a 3x3 identity matrix
+     ```
+   - **Random numbers**:
+     ```python
+     np.random.rand(3, 2)  # Creates a 3x2 array with random values between 0 and 1
+     ```
+
+### 4. **Array Operations**
+   NumPy allows element-wise operations:
+   - **Arithmetic**:
+     ```python
+     a = np.array([1, 2, 3])
+     b = np.array([4, 5, 6])
+     print(a + b)  # Output: [5 7 9]
+     print(a * 2)  # Output: [2 4 6]
+     ```
+   - **Matrix Multiplication** (dot product):
+     ```python
+     a = np.array([[1, 2], [3, 4]])
+     b = np.array([[5, 6], [7, 8]])
+     print(np.dot(a, b))  # Matrix multiplication
+     ```
+
+### 5. **Slicing and Indexing**
+   You can access elements and slices of arrays using index notation:
+   - **Access single element**:
+     ```python
+     arr = np.array([[1, 2, 3], [4, 5, 6]])
+     print(arr[0, 1])  # Output: 2
+     ```
+   - **Slicing**:
+     ```python
+     arr = np.array([1, 2, 3, 4, 5])
+     print(arr[1:4])  # Output: [2 3 4]
+     ```
+
+### 6. **Broadcasting**
+   NumPy allows arithmetic operations on arrays of different shapes through a feature called broadcasting. Smaller arrays are broadcasted to match the shape of larger arrays.
+   Example:
+   ```python
+   a = np.array([1, 2, 3])
+   b = np.array([[4], [5], [6]])
+   print(a + b)
+   # Output: [[5 6 7]
+   #          [6 7 8]
+   #          [7 8 9]]
+   ```
+
+### 7. **Useful Functions**
+   - **`np.sum()`**: Sum of elements in an array, along an axis if specified.
+     ```python
+     np.sum([[1, 2], [3, 4]])  # Output: 10
+     np.sum([[1, 2], [3, 4]], axis=0)  # Output: [4 6] (sum along rows)
+     ```
+   - **`np.mean()`**: Mean of elements.
+     ```python
+     np.mean([1, 2, 3, 4])  # Output: 2.5
+     ```
+   - **`np.max()` and `np.min()`**: Maximum and minimum element in an array.
+     ```python
+     np.max([1, 2, 3])  # Output: 3
+     np.min([1, 2, 3])  # Output: 1
+     ```
+   - **`np.argmax()` and `np.argmin()`**: Return the indices of the maximum and minimum values.
+   - **`np.reshape()`**: Reshape an array into a different shape.
+     ```python
+     arr = np.array([1, 2, 3, 4])
+     arr.reshape((2, 2))  # Reshapes to a 2x2 array
+     ```
+   - **`np.transpose()`**: Swap rows and columns of a matrix.
+     ```python
+     arr = np.array([[1, 2], [3, 4]])
+     print(np.transpose(arr))  # Output: [[1 3] [2 4]]
+     ```
+
+### 8. **Linear Algebra Functions**
+   - **Matrix inversion**:
+     ```python
+     np.linalg.inv(np.array([[1, 2], [3, 4]]))
+     ```
+   - **Determinant**:
+     ```python
+     np.linalg.det(np.array([[1, 2], [3, 4]]))
+     ```
+   - **Eigenvalues and Eigenvectors**:
+     ```python
+     np.linalg.eig(np.array([[1, 2], [2, 1]]))
+     ```
+
+### 9. **Random Module**
+   NumPy's `random` submodule generates random numbers and random arrays:
+   - **Random numbers**:
+     ```python
+     np.random.rand(3, 2)  # Array with random values between 0 and 1
+     np.random.randint(1, 10, size=(3, 3))  # Integer array between 1 and 10
+     ```
+   - **Shuffling arrays**:
+     ```python
+     arr = np.array([1, 2, 3, 4, 5])
+     np.random.shuffle(arr)
+     print(arr)  # Output: Shuffled array
+     ```
+
+### 10. **Statistical Functions**
+   NumPy provides a range of statistical functions:
+   - **`np.mean()`**: Mean of the elements.
+   - **`np.median()`**: Median of the elements.
+   - **`np.std()`**: Standard deviation of elements.
+   - **`np.var()`**: Variance of the array.
+
+### 11. **Comparison Operations**
+   NumPy supports element-wise comparison:
+   ```python
+   arr = np.array([1, 2, 3, 4])
+   print(arr > 2)  # Output: [False False  True  True]
+   ```
+
+### 12. **Advanced Indexing**
+   You can index arrays using boolean arrays or other arrays (fancy indexing):
+   ```python
+   arr = np.array([1, 2, 3, 4, 5])
+   mask = arr > 3
+   print(arr[mask])  # Output: [4 5]
+   ```
+
+### 13. **Copying Arrays**
+   By default, slicing an array creates a view (not a copy) of the original data. To create a copy, you must explicitly use:
+   ```python
+   copy_arr = arr.copy()
+   ```
+
+### 14. **Saving and Loading**
+   - **Save**:
+     ```python
+     np.save('my_array.npy', arr)  # Saves as a binary file
+     ```
+   - **Load**:
+     ```python
+     loaded_arr = np.load('my_array.npy')  # Loads the array
+     ```
+
+### 15. **Performance**
+   - NumPy arrays are more efficient than Python lists for large datasets, as NumPy stores data in contiguous memory blocks, reducing overhead.
+
+---
+
+This detailed breakdown should give you a solid understanding of NumPy's capabilities. Let me know if you want to dive deeper into any specific part!
+
+The `flags` parameter in `nditer` controls various aspects of the iteration behavior when looping over arrays. By specifying different flags, you can modify how the iteration proceeds, whether to use certain memory layouts, or how chunks of data are processed during each step. Here’s a detailed explanation of the most important flags you can use:
+
+### 1. **`c_index`**:
+   - **Purpose**: Provides the C-order index for the iteration.
+   - **Details**: With this flag, you can retrieve the one-dimensional index of the current element in C-order (row-major order). This means that the elements are iterated row by row.
+
+   #### Example:
+   ```python
+   import numpy as np
+
+   arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+   it = np.nditer(arr, flags=['c_index'])
+
+   for x in it:
+       print(f'C-index: {it.index}, Value: {x}')
+   ```
+
+   - **Output**:
+     ```
+     C-index: 0, Value: 1
+     C-index: 1, Value: 2
+     C-index: 2, Value: 3
+     C-index: 3, Value: 4
+     C-index: 4, Value: 5
+     C-index: 5, Value: 6
+     ```
+
+### 2. **`f_index`**:
+   - **Purpose**: Provides the Fortran-order (column-major) index for the iteration.
+   - **Details**: This flag works similarly to `c_index`, but it returns the index as if the array were laid out in column-major (Fortran-style) order. This means it will iterate column by column instead of row by row.
+
+   #### Example:
+   ```python
+   it = np.nditer(arr, flags=['f_index'])
+
+   for x in it:
+       print(f'F-index: {it.index}, Value: {x}')
+   ```
+
+   - **Output**:
+     ```
+     F-index: 0, Value: 1
+     F-index: 1, Value: 4
+     F-index: 2, Value: 2
+     F-index: 3, Value: 5
+     F-index: 4, Value: 3
+     F-index: 5, Value: 6
+     ```
+
+### 3. **`multi_index`**:
+   - **Purpose**: Provides a multi-dimensional index for each iteration.
+   - **Details**: Instead of a flat, one-dimensional index, this flag gives you the multi-dimensional index (i.e., coordinates) of each element in the array. This is useful for understanding the exact position of an element in an array of any dimensionality.
+
+   #### Example:
+   ```python
+   it = np.nditer(arr, flags=['multi_index'])
+
+   for x in it:
+       print(f'Multi-index: {it.multi_index}, Value: {x}')
+   ```
+
+   - **Output**:
+     ```
+     Multi-index: (0, 0), Value: 1
+     Multi-index: (0, 1), Value: 2
+     Multi-index: (0, 2), Value: 3
+     Multi-index: (1, 0), Value: 4
+     Multi-index: (1, 1), Value: 5
+     Multi-index: (1, 2), Value: 6
+     ```
+
+### 4. **`external_loop`**:
+   - **Purpose**: Yields larger chunks of data at once, rather than single elements.
+   - **Details**: This flag allows you to iterate over the array in blocks or chunks instead of element-by-element. The iteration will yield arrays (or sub-arrays) rather than individual elements, improving performance for certain types of operations.
+
+   #### Example:
+   ```python
+   arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+   it = np.nditer(arr, flags=['external_loop'])
+
+   for x in it:
+       print(x)
+   ```
+
+   - **Output**:
+     ```
+     [1 2 3]
+     [4 5 6]
+     ```
+
+   - **Explanation**: Instead of returning single elements, `external_loop` returns an entire row in each iteration.
+
+### 5. **`reduce_ok`**:
+   - **Purpose**: Enables reduction over arrays.
+   - **Details**: This flag allows certain reductions (like summing over axes) that would normally not be allowed, such as iterating over a broadcasted array.
+
+   #### Example:
+   ```python
+   arr = np.array([1, 2, 3])
+
+   it = np.nditer(arr, flags=['reduce_ok'])
+
+   total = 0
+   for x in it:
+       total += x
+   print(f'Sum: {total}')
+   ```
+
+   - **Output**:
+     ```
+     Sum: 6
+     ```
+
+### 6. **`buffered`**:
+   - **Purpose**: Allows buffering of elements during iteration.
+   - **Details**: This flag creates an internal buffer for elements during the iteration, which can be useful when working with large arrays or complex data types. It can enhance performance by reducing the overhead of frequent memory access.
+
+### 7. **`delay_bufalloc`**:
+   - **Purpose**: Delays buffer allocation until the iteration starts.
+   - **Details**: This flag is used in conjunction with `buffered`. It delays the allocation of the buffer until the first time it is needed, which can be useful for efficiency in certain cases.
+
+### 8. **`refs_ok`**:
+   - **Purpose**: Allows iteration over objects that are not plain NumPy arrays.
+   - **Details**: Normally, `nditer` only works with basic NumPy data types. Using this flag, you can iterate over object arrays that hold Python objects like lists or other non-numerical data.
+
+#### Example:
+```python
+arr = np.array([['a', 'b'], ['c', 'd']], dtype=object)
+
+it = np.nditer(arr, flags=['refs_ok'])
+
+for x in it:
+    print(x)
+```
+
+- **Output**:
+  ```
+  a
+  b
+  c
+  d
+  ```
+
+### 9. **`zerosize_ok`**:
+   - **Purpose**: Allows iteration over arrays with a zero size.
+   - **Details**: Normally, `nditer` would raise an error when trying to iterate over an empty array. This flag allows for handling empty arrays without throwing an error.
+
+#### Example:
+```python
+arr = np.empty((0, 0))
+
+it = np.nditer(arr, flags=['zerosize_ok'])
+
+for x in it:
+    print(x)  # Won't print anything because array is empty, but won't raise an error
+```
+
+---
+
+### Summary of `flags`:
+| Flag            | Purpose/Behavior                             |
+|-----------------|----------------------------------------------|
+| `c_index`       | Provides C-order (row-major) index           |
+| `f_index`       | Provides Fortran-order (column-major) index  |
+| `multi_index`   | Provides multi-dimensional index             |
+| `external_loop` | Yields larger chunks of data                 |
+| `reduce_ok`     | Allows reductions over arrays                |
+| `buffered`      | Enables buffering for efficient iteration    |
+| `delay_bufalloc`| Delays buffer allocation                     |
+| `refs_ok`       | Allows iteration over object arrays          |
+| `zerosize_ok`   | Allows iteration over zero-size arrays       |
+
+---
+
+These flags give you fine-grained control over how you iterate through arrays. Depending on the nature of your task (whether it's simple iteration, element modification, or iteration over complex or broadcasted arrays), you can select the appropriate flags to enhance performance or tailor the iteration to your needs.
+
+Let me know if you want to explore any specific flag in more detail!
+
+Notes : https://chatgpt.com/share/66f9365f-71b4-800e-a6c3-1864a141a56b

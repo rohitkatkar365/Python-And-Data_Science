@@ -1,0 +1,6 @@
+f = open("File Handling\\demo1.txt","r+")
+# f.write("I Love Data")
+# print(f.read())
+# f.write("\nI Also Love Data Science")
+print(f.read())
+f.close()
